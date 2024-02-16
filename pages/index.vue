@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {useMouse, useWindowSize} from '@vueuse/core';
 
+const localePath = useLocalePath();
+
 const {x, y} = useMouse();
 const { width, height } = useWindowSize();
 
@@ -36,14 +38,14 @@ const logoGradient = computed(() => {
         Food 2 Fuel
       </h1>
       <p class="text-lg text-center text-gray-400 mb-8">
-        An app that addresses unsustainable consumption and 
-        production by informing users about product environmental 
-        impact and promoting sustainable alternatives. It aims to 
-        reduce waste, conserve resources, and shift consumer behavior 
-        towards sustainability.
+        {{ $t('home.description')}}
       </p>
       <div class="flex justify-center">
-        <Button>Learn More</Button>
+        <Button>
+          <NuxtLink :to="localePath('submit')">
+            {{$t('home.enter_button')}}
+          </NuxtLink>
+        </Button>
       </div>
     </div>
 

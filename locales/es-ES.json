@@ -1,0 +1,11 @@
+{
+  "home": {
+    "description": "Una aplicación que aborda el consumo y la producción insostenibles al informar a los usuarios sobre el impacto ambiental del producto y promover alternativas sostenibles. Su objetivo es reducir los residuos, conservar los recursos y cambiar el comportamiento del consumidor hacia la sostenibilidad.",
+    "enter_button": "¡Vamos!"
+  },
+  "header": {
+    "home": "inicio",
+    "submit": "enviar recurso",
+    "tips": "consejos ecológicos"
+  }
+}

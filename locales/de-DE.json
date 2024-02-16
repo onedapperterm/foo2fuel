@@ -1,0 +1,13 @@
+{
+  "home": {
+    "description": "Eine App, die dem Problem des untragbaren Konsums und der Produktion begegnet, indem sie Benutzer über die Umweltauswirkungen von Produkten informiert und nachhaltige Alternativen fördert. Sie zielt darauf ab, Abfall zu reduzieren, Ressourcen zu schonen und das Konsumverhalten hin zur Nachhaltigkeit zu ändern.",
+    "enter_button": "Los geht's!"
+  },
+  "header": {
+    "home": "Startseite",
+    "submit": "Ressource einreichen",
+    "tips": "Umwelt-Tipps"
+  }
+}
+
+

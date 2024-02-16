@@ -1,0 +1,11 @@
+{
+  "home": {
+    "description": "An app that addresses unsustainable consumption and production by informing users about product environmental impact and promoting sustainable alternatives. It aims to reduce waste, conserve resources, and shift consumer behavior towards sustainability.",
+    "enter_button": "Lets go!"
+  },
+  "header": {
+    "home": "home",
+    "submit": "submit resource",
+    "tips": "eco tips"
+  }
+}
