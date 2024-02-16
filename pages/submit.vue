@@ -4,5 +4,6 @@
 <template>
   <div>
     <h1>Submit</h1>
+    <Button>Submit</Button>
   </div>
 </template>
