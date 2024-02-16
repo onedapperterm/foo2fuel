@@ -29,7 +29,7 @@ export default defineNuxtComponent({
 
 <template>
   <header class="py-4 z-10 relative" :class="atHome() ? '' : 'border-b'">
-    <nav class="flex justify-between items-center max-w-8xl mx-auto px-4 align-center">
+    <nav class="flex justify-between items-center max-w-8xl mx-auto px-4">
       <!-- Logo or Title -->
       <h1 class="text-xl text-primary font-semibold">
         <nuxt-link :to="localePath('/')" class="hover:text-gray-200">
@@ -38,7 +38,7 @@ export default defineNuxtComponent({
       </h1>
       
       <!-- Navigation Links -->
-      <ul class="flex space-x-4">
+      <ul class="flex space-x-4 items-center">
         <li v-for="link in links" :key="link.to" :class="atHome() ? 'text-white' : ''">
           <nuxt-link :to="localePath(link.to)" :class="{ 'text-primary': isActive(link.to) }" class="hover:text-gray-200">
             {{ $t(link.translationKey) }}
