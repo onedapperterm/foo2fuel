@@ -4,17 +4,15 @@ import type { AxiosResponse, Method } from 'axios';
 export async function callApi<T>(
   endpoint: string,
   requestData: any,
-  method: Method = 'get'
+  method: Method = 'POST'
 ): Promise<T> {
   try {
 
     endpoint = 'https://localhost:8080' + endpoint;
 
-    const response: AxiosResponse<any> = await axios.request({
-      url: endpoint,
-      method: method,
-      data: requestData
-    });
+    const response: AxiosResponse<any> = await axios.post( endpoint, requestData );
+
+    console.log(requestData);
 
     return response.data;
   } catch (error: Error | any) {

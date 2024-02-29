@@ -12,7 +12,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { formatDate } from '@vueuse/core'
 import { cn } from '~/lib/utils'
-import { callApi } from '../lib/httpClient';
+import axios from 'axios';
 
 const categories: string[] = ['Gemüse', 'Brot', 'Fleisch', 'Getränke', 'Sonstigen'];
 
@@ -31,14 +31,13 @@ const form = useForm({
 const onSubmit = form.handleSubmit((values) => {
   values = {
     ...values,
-    id: 1
+    id: 0
   }
-  console.log('Form submitted!', values)
-  
-  callApi('/save', values, 'post').then((res) => {
-    console.log(res)
-    });
 
+  let response = axios.post('http://localhost:8080/save', values)
+  response.then((res) => {
+    console.log(res)
+  })
 })
 
 const isValid = computed(() => form.isFieldValid('description') && form.isFieldValid('expirationdate') && form.isFieldValid('category'));
