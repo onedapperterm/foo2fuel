@@ -7,5 +7,14 @@
     "home": "home",
     "submit": "submit resource",
     "tips": "eco tips"
+  },
+  "submit": {
+    "title": "Submit a resource",
+    "description": "description of the resource",
+    "name": "Name",
+    "description_label": "Description",
+    "category": "Category",
+    "submit_button": "Submit",
+    "date_label": "Pickup date"
   }
 }

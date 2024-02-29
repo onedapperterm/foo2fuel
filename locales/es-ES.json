@@ -7,5 +7,14 @@
     "home": "inicio",
     "submit": "enviar recurso",
     "tips": "consejos ecológicos"
+  },
+  "submit": {
+    "title": "Enviar un recurso",
+    "description": "descripción del recurso",
+    "name": "Nombre",
+    "description_label": "Descripción",
+    "category": "Categoría",
+    "submit_button": "Enviar",
+    "date_label": "Fecha de recogida"
   }
 }

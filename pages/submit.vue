@@ -12,6 +12,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { formatDate } from '@vueuse/core'
 import { cn } from '~/lib/utils'
+import { callApi } from '../lib/httpClient';
 
 const categories: string[] = ['Gemüse', 'Brot', 'Fleisch', 'Getränke', 'Sonstigen'];
 
@@ -28,6 +29,11 @@ const form = useForm({
 
 const onSubmit = form.handleSubmit((values) => {
   console.log('Form submitted!', values)
+
+  callApi('/save', values, 'post').then((res) => {
+    console.log(res)
+    });
+
 })
 
 const isValid = computed(() => form.isFieldValid('description') && form.isFieldValid('expirationDate') && form.isFieldValid('category'));
@@ -40,12 +46,12 @@ const isValid = computed(() => form.isFieldValid('description') && form.isFieldV
       <form @submit="onSubmit" class="max-w-[450px] flex flex-col align-left gap-4">
         <FormField v-slot="{ componentField }" name="description">
           <FormItem>
-            <FormLabel>Description</FormLabel>
+            <FormLabel>{{ $t('submit.description_label')}}</FormLabel>
             <FormControl>
-              <Input type="text" placeholder="shadcn" v-bind="componentField" />
+              <Input type="text" placeholder="..." v-bind="componentField" />
             </FormControl>
             <FormDescription>
-              This is your description
+              {{ $t('submit.description') }}
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -53,7 +59,7 @@ const isValid = computed(() => form.isFieldValid('description') && form.isFieldV
 
         <FormField v-slot="{ componentField }" name="category">
           <FormItem>
-            <FormLabel>Category</FormLabel>
+            <FormLabel> {{ $t('submit.category')}} </FormLabel>
             <Select v-bind="componentField">
               <FormControl>
                 <SelectTrigger>
@@ -68,21 +74,18 @@ const isValid = computed(() => form.isFieldValid('description') && form.isFieldV
                 </SelectGroup>
               </SelectContent>
             </Select>
-            <FormDescription>
-              You can manage verified category addresses in your category settings.
-            </FormDescription>
             <FormMessage />
           </FormItem>
         </FormField>
 
         <FormField v-slot="{ componentField, value }" name="expirationDate">
           <FormItem class="flex flex-col">
-            <FormLabel>Expiration Date</FormLabel>
+            <FormLabel> {{ $t('submit.date_label') }} </FormLabel>
             <Popover>
               <PopoverTrigger as-child>
                 <FormControl>
                   <Button variant="outline" :class="cn('w-[240px] ps-3 text-start font-normal', !value && 'text-muted-foreground',)" >
-                    <span>{{ value ? formatDate(value, "DD.MM.YYYY") : "Pick a date" }}</span>
+                    <span>{{ value ? formatDate(value, "DD.MM.YYYY") : "Date" }}</span>
                     <CalendarIcon class="ms-auto h-4 w-4 opacity-50" />
                   </Button>
                 </FormControl>
@@ -99,7 +102,7 @@ const isValid = computed(() => form.isFieldValid('description') && form.isFieldV
         </FormField>
 
         <Button type="submit" :disabled="!isValid">
-          Submit
+          {{ $t('submit.submit_button') }}
         </Button>
       </form>
     </client-only>

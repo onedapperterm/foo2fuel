@@ -7,6 +7,15 @@
     "home": "trang chủ",
     "submit": "gửi tài nguyên",
     "tips": "mẹo sinh thái"
+  },
+  "submit": {
+    "title": "Gửi tài nguyên",
+    "description": "mô tả về tài nguyên",
+    "name": "Tên",
+    "description_label": "Mô tả",
+    "category": "Danh mục",
+    "submit_button": "Gửi",
+    "date_label": "Ngày lấy"
   }
 }
 

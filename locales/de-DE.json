@@ -7,6 +7,15 @@
     "home": "Startseite",
     "submit": "Ressource einreichen",
     "tips": "Umwelt-Tipps"
+  },
+  "submit": {
+    "title": "Ressource einreichen",
+    "description": "Beschreibung der Ressource",
+    "name": "Name",
+    "description_label": "Beschreibung",
+    "category": "Kategorie",
+    "submit_button": "Einreichen",
+    "date_label": "Abholdatum"
   }
 }
 
