@@ -17,7 +17,7 @@ import { callApi } from '../lib/httpClient';
 const categories: string[] = ['Gemüse', 'Brot', 'Fleisch', 'Getränke', 'Sonstigen'];
 
 const formSchema = toTypedSchema(z.object({
-  
+  id: z.number().optional(),
   description: z.string().min(2).max(100),
   category: z.string({required_error: 'select a valid category'}),
   expirationdate: z.date({ required_error: 'An expiration date is required.'})
@@ -29,6 +29,10 @@ const form = useForm({
 })
 
 const onSubmit = form.handleSubmit((values) => {
+  values = {
+    ...values,
+    id: 1
+  }
   console.log('Form submitted!', values)
   
   callApi('/save', values, 'post').then((res) => {

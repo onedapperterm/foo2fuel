@@ -6,7 +6,7 @@
   "header": {
     "home": "home",
     "submit": "submit resource",
-    "tips": "eco tips"
+    "admin": "Admin"
   },
   "submit": {
     "title": "Submit a resource",

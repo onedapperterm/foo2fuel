@@ -6,7 +6,7 @@
   "header": {
     "home": "inicio",
     "submit": "enviar recurso",
-    "tips": "consejos ecológicos"
+    "admin": "admin"
   },
   "submit": {
     "title": "Enviar un recurso",

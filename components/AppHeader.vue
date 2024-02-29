@@ -10,7 +10,7 @@ export default defineNuxtComponent({
     const links = [
       { to: '/', translationKey: 'header.home' },
       { to: '/submit', translationKey: 'header.submit' },
-      { to: '/tips', translationKey: 'header.tips' }
+      { to: '/admin', translationKey: 'header.admin' }
     ]
 
     function isActive(to: string) {
