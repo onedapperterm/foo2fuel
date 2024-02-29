@@ -17,9 +17,10 @@ import { callApi } from '../lib/httpClient';
 const categories: string[] = ['Gemüse', 'Brot', 'Fleisch', 'Getränke', 'Sonstigen'];
 
 const formSchema = toTypedSchema(z.object({
+  
   description: z.string().min(2).max(100),
   category: z.string({required_error: 'select a valid category'}),
-  expirationDate: z.date({ required_error: 'An expiration date is required.'})
+  expirationdate: z.date({ required_error: 'An expiration date is required.'})
 }))
 
 
@@ -29,14 +30,14 @@ const form = useForm({
 
 const onSubmit = form.handleSubmit((values) => {
   console.log('Form submitted!', values)
-
+  
   callApi('/save', values, 'post').then((res) => {
     console.log(res)
     });
 
 })
 
-const isValid = computed(() => form.isFieldValid('description') && form.isFieldValid('expirationDate') && form.isFieldValid('category'));
+const isValid = computed(() => form.isFieldValid('description') && form.isFieldValid('expirationdate') && form.isFieldValid('category'));
 
 </script>
 
@@ -78,7 +79,7 @@ const isValid = computed(() => form.isFieldValid('description') && form.isFieldV
           </FormItem>
         </FormField>
 
-        <FormField v-slot="{ componentField, value }" name="expirationDate">
+        <FormField v-slot="{ componentField, value }" name="expirationdate">
           <FormItem class="flex flex-col">
             <FormLabel> {{ $t('submit.date_label') }} </FormLabel>
             <Popover>
